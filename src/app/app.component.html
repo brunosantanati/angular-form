@@ -1,0 +1,17 @@
+<form #myForm="ngForm" (submit)="templateForm(myForm.value)" novalidate>
+  <div>
+     <input id="male" type="radio" value="male" name="gender" ngModel>
+     <label class="custom-control-label" for="male">Male</label>
+  </div>
+
+  <div>
+     <input id="female" type="radio" value="female" name="gender" ngModel>
+     <label for="female">Female</label>
+  </div>
+
+   <div *ngIf="isSubmitted && myForm.invalid">
+      <p>Please select either value</p>
+   </div>
+
+  <button type="submit">Find out gender</button>
+</form>
